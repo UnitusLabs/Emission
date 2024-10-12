@@ -1,0 +1,71 @@
+//SPDX-License-Identifier: MIT
+pragma solidity 0.8.10;
+
+error BaseStakingPool_addRewardDistributor__RewardDistributorIsZeroAddress();
+error BaseStakingPool_addRewardDistributor__RewardDistributorAlreadyExist();
+error BaseStakingPool_initialize__StakingTokenIsZeroAddress();
+error BaseStakingPool_removeRewardDistributor__RewardDistributorDoesNotExist();
+error BaseStakingPool_stake__StakeAmountIsZero();
+error BaseStakingPool_withdraw__WithdrawAmountIsZero();
+
+error BLPStakingPool_setRewardDistributorManager__InvalidRewardDistributorManager();
+
+error BLPReward_initialize__StakingTokenIsZeroAddress();
+error BLPReward_initialize__RewardTokenIsZeroAddress();
+error BLPReward_initialize__TreasuryIsZeroAddress();
+error BLPReward_setTreasury__TreasuryIsZeroAddress();
+error BLPReward_setTreasury__SameTreasuryAddress();
+
+error EligibilityManager_addBLPStakingPoolInternal__InvalidStakingPool(
+    address stakingPool
+);
+error EligibilityManager_addBLPStakingPoolInternal__StakingPoolAlreadyExist(
+    address stakingPool
+);
+error EligibilityManager_addValidSupplyInternal__InvalidSupply(address iToken);
+error EligibilityManager_addValidSupplyInternal__ValidSupplyAlreadyExist(
+    address iToken
+);
+error EligibilityManager_initialize__InvalidController();
+error EligibilityManager_removeValidSupplyInternal__ValidSupplyDoesNotExist(
+    address iToken
+);
+error EligibilityManager_removeBLPStakingPoolInternal__StakingPoolDoesNotExist(
+    address stakingPool
+);
+
+// Modifier error
+error RewardDistributorManager__NotController();
+// Function errors
+error RewardDistributorManager_addRewardDistributorInternal__InvalidRewardDistributor();
+error RewardDistributorManager_addRewardDistributorInternal__RewardDistributorAlreadyExist(
+    address rewardDistributor
+);
+error RewardDistributorManager_initialize__InvalidController();
+error RewardDistributorManager_removeRewardDistributorInternal__RewardDistributorDoesNotExist(
+    address rewardDistributor
+);
+error RewardDistributorManager_setEligibilityManager_InvalidEligibilityManager();
+error RewardDistributorManager_updateEligibleBalance__InvalidEligibility();
+
+error RewardDistributor__CallerIsNotRewardManager();
+error RewardDistributor__ContractPaused();
+error RewardDistributor_initialize__InvalidController();
+error RewardDistributor_initialize__InvalidRewardDistributorManager();
+error RewardDistributor_rescueTokens__CallerIsNotTreasury();
+error RewardDistributor_setRewardToken__InvalidRewardToken();
+error RewardDistributor_setTreasury__InvalidTreasury();
+error RewardDistributor_setDistributionBorrowSpeedsInternal__ArrayLengthMismatch();
+error RewardDistributor_setDistributionSupplySpeedsInternal__ArrayLengthMismatch();
+error RewardDistributor_setDistributionBorrowSpeed__TokenHasNotBeenListed(
+    address iToken
+);
+error RewardDistributor_setDistributionSupplySpeed__TokenHasNotBeenListed(
+    address iToken
+);
+error RewardDistributor_updateDistributionState__TokenHasNotBeenListed(
+    address iToken
+);
+error RewardDistributor_updateReward__TokenHasNotBeenListed(address iToken);
+error RewardDistributor_updateReward__AccountIsZeroAddress();
+error RewardDistributor_setBountyRatio__RatioTooHigh();
